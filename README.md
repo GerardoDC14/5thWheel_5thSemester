@@ -119,3 +119,4 @@ Data transfer using I2C1 is still in progress
 ![image](https://github.com/GerardoDC14/5thWheel_5thSemester/assets/123440177/6f9fdb4e-eb84-4556-9b52-72bee884d385)
 
 # Prototype
+https://drive.google.com/file/d/1q5f74_9eyorfq265GyVNEVVHl1ltfvB8/view?usp=sharing 
