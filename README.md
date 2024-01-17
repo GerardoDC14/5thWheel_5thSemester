@@ -67,3 +67,55 @@ known time and knowing the pulses per revolution, the RPM can be calculated.
 ● Timer 2 (TIM2) is configured to generate periodic interrupts. In the
 TIM2_IRQHandler() function, the RPM is calculated based on the number of pulses
 counted.
+
+# Reading Defined Variables (Current, Voltage, Temperature)
+## Analog-to-Digital Conversion (ADC)
+Many sensors produce analog outputs, which microcontrollers need to convert into digital
+values for processing. Analog-to-Digital Converters (ADC) are used to convert analog
+signals (like those from sensors) into digital values that the microcontroller can process.
+● The ADC is initialized in the init_ADC() function.
+● Specific channels are read using the read_ADC_Channel() function.
+
+### Temperature
+The LM35 is a temperature sensor that produces a voltage
+proportional to the ambient temperature. For every degree Celsius rise in temperature, the
+LM35 gives an output rise of 10mV. The ADC_to_Temperature() function converts the ADC
+reading to a temperature in degrees Celsius.
+
+### Battery Voltage
+ To read the battery voltage, a voltage divider is being used to
+step down the voltage to a level safe for the ADC. Once the stepped-down voltage is read by
+the ADC, the actual battery voltage is computed by compensating for the divider ratio. The
+ADC_to_BatteryVoltage() function converts the ADC reading to the actual battery voltage.
+
+### Current 
+The ACS712 is a hall-effect-based linear current sensor. It produces a
+voltage output centered around Vcc/2 (for a 5V supply, it's 2.5V). The deviation from this
+center point is proportional to the current flowing through the sensor. The ADC_to_Current()
+function converts the ADC reading to a current value.
+
+# Comunication Protocol 
+## I2C (Inter-Integrated Circuit)
+I2C is a bidirectional two-wire communication protocol designed for short-distance
+communication between integrated circuits.
+● Master-Slave Configuration: In I2C communication, one device (the master) controls
+the communication, while other devices (slaves) respond to the master's requests.
+● Bus Lines: I2C uses two bus lines: Serial Data Line (SDA) and Serial Clock Line
+(SCL). Both lines require pull-up resistors since they are open-drain lines.
+● Addressing: Each slave device has a unique address. The master device addresses
+a specific slave by sending its address on the bus.
+
+The given code initializes the I2C interface, making it ready to communicate with external
+I2C devices.
+● The init_I2C() function initializes the I2C1 interface.
+● GPIOB pins 6 and 7 (PB6 and PB7) are set for I2C functionality.
+● The function configures the GPIO pins, sets the I2C speed (timing), and enables the
+I2C1 peripheral.
+Data transfer using I2C1 is still in progress
+
+# Electronic Design 
+![image](https://github.com/GerardoDC14/5thWheel_5thSemester/assets/123440177/0cdebcdc-aa42-4db5-8a88-6bbd0dc48da6)
+
+![image](https://github.com/GerardoDC14/5thWheel_5thSemester/assets/123440177/6f9fdb4e-eb84-4556-9b52-72bee884d385)
+
+# Prototype
