@@ -1,10 +1,3 @@
-/*
- * bitmap.h
- *
- *  Created on: 17-Jun-2019
- *      Author: poe
- */
-
 #ifndef BITMAP_H_
 #define BITMAP_H_
 
