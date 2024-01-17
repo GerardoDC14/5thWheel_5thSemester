@@ -10,7 +10,7 @@ or process automation. The challenge for this project was to design and program 
 Developed a wheel mechanism that includes a brushless DC motor, which is attached to the wheelchair. This setup is controlled by a user-friendly controller that uses sensors to help steer the wheelchair, making it easier for people with lower body mobility issues to move around. The mechanism also features a display that shows the current speed, and it has an encoder to adjust and control the speed more accurately.
 ![fw2](https://github.com/GerardoDC14/5thWheel_5thSemester/assets/123440177/32165e3b-c78e-42e4-8f03-f944379d6138)
 
-# Block Diagram 
+## Block Diagram 
 ![image](https://github.com/GerardoDC14/5thWheel_5thSemester/assets/123440177/36439088-edaf-432a-93c4-470f54049488)
 
 The STM32F0Discovery microcontroller is at the center of the operation. With 64KB of flash
